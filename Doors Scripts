@@ -62,10 +62,6 @@ Entitys:NewButton("Give Crucifix", "Gives you the crucifix", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/Johnny39871/assets/main/crucifixo'))()
 end)
 
-Entitys:NewButton("Give Crucifix", "Gives you the crucifix", function()
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/Johnny39871/assets/main/crucifixo'))()
-end)
-
 Rooms:NewButton("Entity Notifier", "Notifies you if an entity is coming in rooms.", function()
     workspace.ChildAdded:Connect(function(Obj)
         if Obj.Name:sub(1, 1) == "A" and Obj.Name ~= "AmbushMoving" then
