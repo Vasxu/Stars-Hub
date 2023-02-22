@@ -53,3 +53,42 @@ end)
 Rooms:NewButton("AutoWalk & AutoHide", "Walks through rooms for you with a high speed and AutoHides for you", function()
     loadstring(game:HttpGet("https://" .. "raw.githubusercontent.com/DaRealGeo/roblox/master/rooms-autowalk"))()
 end)
+
+Entitys:NewButton("Spawn A-90", "Spawns A-90 from Rooms", function()
+    local a = require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.RemoteListener.Modules["A90"])(require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game))()
+end)
+
+Entitys:NewButton("Give Crucifix", "Gives you the crucifix", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/Johnny39871/assets/main/crucifixo'))()
+end)
+
+Entitys:NewButton("Give Crucifix", "Gives you the crucifix", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/Johnny39871/assets/main/crucifixo'))()
+end)
+
+Rooms:NewButton("Entity Notifier", "Notifies you if an entity is coming in rooms.", function()
+    workspace.ChildAdded:Connect(function(Obj)
+        if Obj.Name:sub(1, 1) == "A" and Obj.Name ~= "AmbushMoving" then
+            game.StarterGui:SetCore("SendNotification", {
+                Title = Obj.Name .. " Spawned :warning:",
+                Text = "Hide quick",
+                Duration = 5
+            })
+        end
+    end)
+    workspace.ChildRemoved:Connect(function(Obj)
+        if Obj.Name:sub(1, 1) == "A" and Obj.Name ~= "AmbushMoving" then
+            game.StarterGui:SetCore("SendNotification", {
+                Title = Obj.Name .. " DeSpawned :white_check_mark:",
+                Text = "ur good",
+                Duration = 5
+            })
+        end
+    end)
+end)
+
+
+
+
+
+-- use this script if the other one doesnt work
