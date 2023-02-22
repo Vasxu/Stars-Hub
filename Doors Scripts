@@ -5,9 +5,13 @@ local Utilities = Window:NewTab("Utilities")
 
 local Entitys = Window:NewTab("Entitys")
 
+local Rooms = Window:NewTab("Rooms")
+
 local Utilities = Utilities:NewSection("Utilities")
 
 local Entitys = Entitys:NewSection("Entitys")
+
+local Rooms = Rooms:NewSection("Rooms")
 
 Utilities:NewToggle("Max WalkSpeed", "Makes you run as fast as possible", function(state)
     if state then
@@ -40,4 +44,12 @@ _G.Price = 250 -- tablet price on shop
 _G.Description = "The Tablet You Find in Rooms" -- tablet description on shop
 
 loadstring(game:HttpGet('https://raw.githubusercontent.com/DeividComSono/Scripts/main/Scanner.lua'))()
+end)
+
+Rooms:NewButton("Vynixius Rooms", "Executes Vynixius Rooms", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Vynixius/main/Doors/Loader.lua"))()
+end)
+
+Rooms:NewButton("AutoWalk & AutoHide", "Walks through rooms for you with a high speed and AutoHides for you", function()
+    loadstring(game:HttpGet("https://" .. "raw.githubusercontent.com/DaRealGeo/roblox/master/rooms-autowalk"))()
 end)
