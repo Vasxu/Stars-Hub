@@ -1,0 +1,43 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Stars Hub - Doors", "Ocean")
+
+local Utilities = Window:NewTab("Utilities")
+
+local Entitys = Window:NewTab("Entitys")
+
+local Utilities = Utilities:NewSection("Utilities")
+
+local Entitys = Entitys:NewSection("Entitys")
+
+Utilities:NewToggle("Max WalkSpeed", "Makes you run as fast as possible", function(state)
+    if state then
+       game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 21
+       game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+    end
+end)
+
+Utilities:NewButton("Infinite Yield", "Executes Infinite Yield", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+Utilities:NewButton("Vynixius Doors", "Executes Vynixius Doors", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Vynixius/main/Doors/Loader.lua"))()
+end)
+
+Utilities:NewButton("PoopDoors", "Executes Poopdoors", function()
+    loadstring(game:HttpGet(("https://raw.githubusercontent.com/mstudio45/poopdoors_edited/main/poopdoors_edited.lua"),true))()
+end)
+
+
+Entitys:NewButton("Plamen's Entity Spawner", "Executes Plamen's Entity Spawner", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/plamen6789/DoorsEntitySpawner/main/EntitySpawner'))()
+end)
+
+Entitys:NewButton("Get Tablet/Scanner", "Gives you the Tablet/Scanner you find in rooms", function()
+    _G.UpdateStars = false -- stars disappear after picking up a book/breaker pole | false: a little lag
+_G.OnShop = true -- can buy on pre run shop
+_G.Price = 250 -- tablet price on shop
+_G.Description = "The Tablet You Find in Rooms" -- tablet description on shop
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/DeividComSono/Scripts/main/Scanner.lua'))()
+end)
