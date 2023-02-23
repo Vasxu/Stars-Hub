@@ -97,14 +97,6 @@ Utilities:NewSlider("WalkSpeed", "Sets your walkspeed", 500, 0, function(s) -- 2
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
 end)
 
-Entity:NewKeybind("Spawn A-90", "Spawns in A-90 With a simple click!", Enum.KeyCode.F, function()
+Entitys:NewKeybind("Spawn A-90", "Spawns in A-90 With a simple click!", Enum.KeyCode.F, function()
 	local a = require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.RemoteListener.Modules["A90"])(require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game))()
 end)
-
-
-
-
-
-
-
--- use this script if the other one doesnt work
