@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("Stars Hub - Doors", "Ocean")
+local Window = Library.CreateLib("Stars Hub V1.31 - Doors", "Ocean")
 
 local Utilities = Window:NewTab("Utilities")
 
@@ -82,6 +82,22 @@ Rooms:NewButton("Entity Notifier", "Notifies you if an entity is coming in rooms
         end
     end)
 end)
+
+Entitys:NewButton("Crucifix That works on everything (Press Q and leftclick)", "Gives you the crucifix that works on everything", function()
+    _G.Uses = 1
+_G.Range= 30
+loadstring(game:HttpGet('https://raw.githubusercontent.com/PenguinManiack/Crucifix/main/Cruc%20on%20item'))() -- anything
+end)
+
+Utilities:NewButton("Revive", "Lets you revive even when you are not allowed to (after door 90, already revived, please wait until it is safe, ect.", function()
+    game.ReplecatedStorage.Bricks.Revive.FireServer()
+end)
+
+Utilities:NewSlider("WalkSpeed", "Sets your walkspeed", 500, 0, function(s) -- 21 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+
 
 
 
