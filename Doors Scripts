@@ -83,11 +83,6 @@ Rooms:NewButton("Entity Notifier", "Notifies you if an entity is coming in rooms
     end)
 end)
 
-Entitys:NewButton("Crucifix That works on everything (Press Q and leftclick)", "Gives you the crucifix that works on everything", function()
-    _G.Uses = 1
-_G.Range= 30
-loadstring(game:HttpGet('https://raw.githubusercontent.com/PenguinManiack/Crucifix/main/Cruc%20on%20item'))() -- anything
-end)
 
 Utilities:NewButton("Revive", "Lets you revive even when you are not allowed to (after door 90, already revived, please wait until it is safe, ect.", function()
     game.ReplecatedStorage.Bricks.Revive.FireServer()
@@ -100,3 +95,42 @@ end)
 Entitys:NewKeybind("Spawn A-90", "Spawns in A-90 With a simple click!", Enum.KeyCode.F, function()
 	local a = require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.RemoteListener.Modules["A90"])(require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game))()
 end)
+
+Entitys:NewKeybind("Inf Jack (execute inf yield and type attach)", "Spawns jack in every wardrobe!", Enum.KeyCode.F, function()
+	local UIS = game.UserInputService
+
+local Player = game.Players.LocalPlayer
+
+local Mouse = Player:GetMouse()
+
+
+local Spamming = false
+
+UIS.InputBegan:Connect(function(input, x)
+    if x then return end
+    if input.KeyCode == Enum.KeyCode.Q then
+        Spamming = not Spamming
+    end
+end)
+
+game:GetService("RunService").RenderStepped:Connect(function()
+    if Spamming then
+        if Mouse.Target.Parent.Name == "Wardrobe" then
+            fireproximityprompt(Mouse.Target.Parent.HidePrompt, 0)
+            fireproximityprompt(Mouse.Target.Parent.HidePrompt, 1)
+        end
+    end    
+end)
+end)
+
+Utilities:NewSlider("Jumppower", "Sets your jumppower", 500, 0, function(s) -- 21 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+
+
+
+
+
+
+-- use this script if the other one doesnt work
