@@ -85,7 +85,7 @@ end)
 
 
 Utilities:NewButton("Revive", "Lets you revive even when you are not allowed to (after door 90, already revived, please wait until it is safe, ect.", function()
-    game.ReplecatedStorage.Bricks.Revive.FireServer()
+    game.ReplecatedStorage.EntityInfo.Revive.FireServer()
 end)
 
 Utilities:NewSlider("WalkSpeed", "Sets your walkspeed", 500, 0, function(s) -- 21 (MaxValue) | 0 (MinValue)
