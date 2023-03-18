@@ -127,6 +127,10 @@ Utilities:NewSlider("Jumppower", "Sets your jumppower", 500, 0, function(s) -- 2
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
 end)
 
+Utilities:NewButton("Make yourself die", "makes you die", function()
+    game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end)
+
 
 
 
