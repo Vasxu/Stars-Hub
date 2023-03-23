@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("Stars Hub V1.31 - Doors", "Ocean")
+local Window = Library.CreateLib("Stars Hub V1.40 - Doors", "Ocean")
 
 local Utilities = Window:NewTab("Utilities")
 
@@ -16,7 +16,6 @@ local Rooms = Rooms:NewSection("Rooms")
 Utilities:NewToggle("Max WalkSpeed", "Makes you run as fast as possible", function(state)
     if state then
        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 21
-       game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
     end
 end)
 
@@ -34,7 +33,7 @@ end)
 
 
 Entitys:NewButton("Plamen's Entity Spawner", "Executes Plamen's Entity Spawner", function()
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/plamen6789/DoorsEntitySpawner/main/EntitySpawner'))()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/plamen6789/UtilitiesHub/main/UtilitiesGUI'))()
 end)
 
 Entitys:NewButton("Get Tablet/Scanner", "Gives you the Tablet/Scanner you find in rooms", function()
@@ -90,37 +89,6 @@ end)
 
 Utilities:NewSlider("WalkSpeed", "Sets your walkspeed", 500, 0, function(s) -- 21 (MaxValue) | 0 (MinValue)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
-end)
-
-Entitys:NewKeybind("Spawn A-90", "Spawns in A-90 With a simple click!", Enum.KeyCode.F, function()
-	local a = require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.RemoteListener.Modules["A90"])(require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game))()
-end)
-
-Entitys:NewKeybind("Inf Jack (execute inf yield and type attach)", "Spawns jack in every wardrobe!", Enum.KeyCode.F, function()
-	local UIS = game.UserInputService
-
-local Player = game.Players.LocalPlayer
-
-local Mouse = Player:GetMouse()
-
-
-local Spamming = false
-
-UIS.InputBegan:Connect(function(input, x)
-    if x then return end
-    if input.KeyCode == Enum.KeyCode.Q then
-        Spamming = not Spamming
-    end
-end)
-
-game:GetService("RunService").RenderStepped:Connect(function()
-    if Spamming then
-        if Mouse.Target.Parent.Name == "Wardrobe" then
-            fireproximityprompt(Mouse.Target.Parent.HidePrompt, 0)
-            fireproximityprompt(Mouse.Target.Parent.HidePrompt, 1)
-        end
-    end    
-end)
 end)
 
 Utilities:NewSlider("Jumppower", "Sets your jumppower", 500, 0, function(s) -- 21 (MaxValue) | 0 (MinValue)
