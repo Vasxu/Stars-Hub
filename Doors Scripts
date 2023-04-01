@@ -1,108 +1,66 @@
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("Stars Hub V1.40 - Doors", "Ocean")
+-- Achievement
+local Achievements = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Custom%20Achievements/Source.lua"))()
+-- Creates and displays your custom achievement
+Achievements.Get({
+    Title = "This is just the beginning",
+    Desc = "...",
+    Reason = 'Executed Star Mode.',
+    Image = "https://qph.cf2.quoracdn.net/main-qimg-74971626a636d78097db14b505f32b6a-pjlq",
+})
 
-local Utilities = Window:NewTab("Utilities")
-
-local Entitys = Window:NewTab("Entitys")
-
-local Rooms = Window:NewTab("Rooms")
-
-local Utilities = Utilities:NewSection("Utilities")
-
-local Entitys = Entitys:NewSection("Entitys")
-
-local Rooms = Rooms:NewSection("Rooms")
-
-Utilities:NewToggle("Max WalkSpeed", "Makes you run as fast as possible", function(state)
-    if state then
-       game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 21
-    end
-end)
-
-Utilities:NewButton("Infinite Yield", "Executes Infinite Yield", function()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/slf0Dev/Ocerium_Project/main/Library.lua"))()
+Window = Library.Main("[BETA] Star Mode","LeftAlt") -- change "LeftAlt" to key that you want will hide gui
+--//tab
+    local Tab = Window.NewTab("Main")
+    local Section = Tab.NewSection("Utilitie scripts")
+    local Button = Section.NewButton("Admin Commands",function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
-end)
+    end)
 
-Utilities:NewButton("Vynixius Doors", "Executes Vynixius Doors", function()
+    --// Button
+    local Button = Section.NewButton("Vynixius",function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Vynixius/main/Doors/Loader.lua"))()
 end)
 
-Utilities:NewButton("PoopDoors", "Executes Poopdoors", function()
+--// Button
+    local Button = Section.NewButton("PoopDoorsEdited --OUTDATED",function()
     loadstring(game:HttpGet(("https://raw.githubusercontent.com/mstudio45/poopdoors_edited/main/poopdoors_edited.lua"),true))()
-end)
+    end)
 
+    local Section = Tab.NewSection("Entity Spawn Scripts And More")
+    local Button = Section.NewButton("plamen6789UtilitiesHub",function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/plamen6789/UtilitiesHub/main/UtilitiesGUI'))()
+        end)
 
-Entitys:NewButton("Plamen's Entity Spawner", "Executes Plamen's Entity Spawner", function()
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/plamen6789/UtilitiesHub/main/UtilitiesGUI'))()
-end)
-
-Entitys:NewButton("Get Tablet/Scanner", "Gives you the Tablet/Scanner you find in rooms", function()
+     --// Button
+    local Button = Section.NewButton("Scanner giver/tablet",function()
     _G.UpdateStars = false -- stars disappear after picking up a book/breaker pole | false: a little lag
-_G.OnShop = true -- can buy on pre run shop
-_G.Price = 250 -- tablet price on shop
-_G.Description = "The Tablet You Find in Rooms" -- tablet description on shop
-
-loadstring(game:HttpGet('https://raw.githubusercontent.com/DeividComSono/Scripts/main/Scanner.lua'))()
-end)
-
-Rooms:NewButton("Vynixius Rooms", "Executes Vynixius Rooms", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Vynixius/main/Doors/Loader.lua"))()
-end)
-
-Rooms:NewButton("AutoWalk & AutoHide", "Walks through rooms for you with a high speed and AutoHides for you", function()
-    loadstring(game:HttpGet("https://" .. "raw.githubusercontent.com/DaRealGeo/roblox/master/rooms-autowalk"))()
-end)
-
-Entitys:NewButton("Spawn A-90", "Spawns A-90 from Rooms", function()
-    local a = require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.RemoteListener.Modules["A90"])(require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game))()
-end)
-
-Entitys:NewButton("Give Crucifix", "Gives you the crucifix", function()
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/Johnny39871/assets/main/crucifixo'))()
-end)
-
-Rooms:NewButton("Entity Notifier", "Notifies you if an entity is coming in rooms.", function()
-    workspace.ChildAdded:Connect(function(Obj)
-        if Obj.Name:sub(1, 1) == "A" and Obj.Name ~= "AmbushMoving" then
-            game.StarterGui:SetCore("SendNotification", {
-                Title = Obj.Name .. " Spawned :warning:",
-                Text = "Hide quick",
-                Duration = 5
-            })
-        end
+    _G.OnShop = true -- can buy on pre run shop
+    _G.Price = 0 -- tablet price on shop
+    _G.Description = "The Most Rarest Item to get." 
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/DeividComSono/Scripts/main/Scanner.lua'))()
     end)
-    workspace.ChildRemoved:Connect(function(Obj)
-        if Obj.Name:sub(1, 1) == "A" and Obj.Name ~= "AmbushMoving" then
-            game.StarterGui:SetCore("SendNotification", {
-                Title = Obj.Name .. " DeSpawned :white_check_mark:",
-                Text = "ur good",
-                Duration = 5
-            })
-        end
+    --// Button
+     local Button = Section.NewButton("inf Revive Script",function()
+        game.ReplecatedStorage.EntityInfo.Revive.FireServer()
     end)
-end)
+    
+    --// Secton
+    local Section = Tab.NewSection("Rooms")
 
+    --// Button
+    local Button = Section.NewButton("Rooms Auto Walk",function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/DaRealGeo/roblox/master/rooms-autowalk"))()
+    end)
 
-Utilities:NewButton("Revive", "Lets you revive even when you are not allowed to (after door 90, already revived, please wait until it is safe, ect.", function()
-    game.ReplecatedStorage.EntityInfo.Revive.FireServer()
-end)
-
-Utilities:NewSlider("WalkSpeed", "Sets your walkspeed", 500, 0, function(s) -- 21 (MaxValue) | 0 (MinValue)
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
-end)
-
-Utilities:NewSlider("Jumppower", "Sets your jumppower", 500, 0, function(s) -- 21 (MaxValue) | 0 (MinValue)
-    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
-end)
-
-Utilities:NewButton("Make yourself die", "makes you die", function()
-    game.Players.LocalPlayer.Character.Humanoid.Health = 0
-end)
-
-
-
-
-
-
-
--- use this script if the other one doesnt work
+    --// Button
+    local Button = Section.NewButton("A90 Spawner",function()
+        local a = require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.RemoteListener.Modules["A90"])(require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game))()
+    end)
+ ---OTHERS
+ local Tab = Window.NewTab("Others")
+ local Section = Tab.NewSection("Others")
+ --// Button
+local Button = Section.NewButton("Gimon Hub",function()
+    loadstring(Game:Httpget("https://pastebin.com/raw/kZM3cEXP"))()
+    end)
