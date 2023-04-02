@@ -23,7 +23,7 @@ Window = Library.Main("[BETA] Star Mode","LeftAlt") -- change "LeftAlt" to key t
 end)
 
 --// Button
-    local Button = Section.NewButton("PoopDoorsEdited --OUTDATED",function()
+    local Button = Section.NewButton("MSDOORS/POOPDOORS EDITED",function()
     loadstring(game:HttpGet(("https://raw.githubusercontent.com/mstudio45/poopdoors_edited/main/poopdoors_edited.lua"),true))()
     end)
 
@@ -37,7 +37,7 @@ end)
     _G.UpdateStars = false -- stars disappear after picking up a book/breaker pole | false: a little lag
     _G.OnShop = true -- can buy on pre run shop
     _G.Price = 0 -- tablet price on shop
-    _G.Description = "The Most Rarest Item to get." 
+    _G.Description = "The tablet you get from the rooms." 
     loadstring(game:HttpGet('https://raw.githubusercontent.com/DeividComSono/Scripts/main/Scanner.lua'))()
     end)
     --// Button
