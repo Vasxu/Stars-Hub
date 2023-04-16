@@ -1,0 +1,82 @@
+local Achievements = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Custom%20Achievements/Source.lua"))()
+Achievements.Get({
+    Title = "This is just the beginning",
+    Desc = "...",
+    Reason = 'Executed Star Mode In Game',
+    Image = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Golden_star.svg/2140px-Golden_star.svg.png",
+})
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/slf0Dev/Ocerium_Project/main/Library.lua"))()
+Window = Library.Main("[BETA] Star Mode","LeftAlt") -- change "LeftAlt" to key that you want will hide gui
+--//tab
+    local Tab = Window.NewTab("Script hub")
+    local Section = Tab.NewSection("Scripts")
+    --// Button
+    local Button = Section.NewButton("Vynixius",function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Vynixius/main/Doors/Loader.lua"))()
+end)
+
+--// Button
+    local Button = Section.NewButton("PoopDoorsEdited --OUTDATED",function()
+    loadstring(game:HttpGet(("https://raw.githubusercontent.com/mstudio45/poopdoors_edited/main/poopdoors_edited.lua"),true))()
+    end)
+
+    local Button = Section.NewButton("plamen6789UtilitiesHub",function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/plamen6789/UtilitiesHub/main/UtilitiesGUI'))()
+        end)
+    --// Button
+     local Button = Section.NewButton("inf Revive Script",function()
+        game.ReplicatedStorage.EntityInfo.Revive.FireServer()
+    end)
+
+    local Button = Section.NewButton("Admin Commands",function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+        end)
+    --// Secton
+
+--//tab
+local Tab = Window.NewTab("Trolling")
+local Section = Tab.NewSection("Elevator Challenges")
+    local Button = Section.NewButton("Cant join or leave elevators",function()
+        print('Executed!')
+        game:GetService("ReplicatedStorage"):WaitForChild("EntityInfo"):WaitForChild("LobbyElevatorExit"):FireServer()
+     wait(0)
+       end)
+       --//section
+local Section = Tab.NewSection("Game Trolls")
+   
+-----DONT ADD
+local Tab = Window.NewTab("Badges And More")
+local Section = Tab.NewSection("Badges")
+--//Toggles
+local Button = Section.NewButton("Interconnected",function()
+    print("Badge eqquiped!")
+    local args = {
+        [1] = "UseRift"
+    }
+    game:GetService("ReplicatedStorage").EntityInfo.FlexAchievement:FireServer(unpack(args))
+    end)
+    local Button = Section.NewButton("A-1000",function()
+        print("Badge eqquiped!")
+    local args = {
+        [1] = "EscapeRooms1000"
+    }
+    game:GetService("ReplicatedStorage").EntityInfo.FlexAchievement:FireServer(unpack(args))
+end)
+
+ 
+    
+-------------OTHERS TAB
+local Tab = Window.NewTab("1 Click Remotes")
+local Section = Tab.NewSection("Items")
+--// Button
+local Button = Section.NewButton("Vitamins",function()
+    game:GetService("Players").LocalPlayer.Character.Vitamins.Remote:FireServer()
+end)
+local Button = Section.NewButton("lighter",function()
+    game:GetService("Players").LocalPlayer.Character.Lighter.Remote:FireServer()
+end)
+local Button = Section.NewButton("leave Elevator",function()
+    print("Left!")
+    game:GetService("ReplicatedStorage"):WaitForChild("EntityInfo"):WaitForChild("LobbyElevatorExit"):FireServer()
+    end)
